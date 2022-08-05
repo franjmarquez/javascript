@@ -1,69 +1,62 @@
-let entrada=prompt("Eliga que tipo de entrada al cine quiere y le dire el precio en total: \n2D \n3D \n2D DBOX \n3D DBOX \n(sino escriba: salir)");
-let segundaEntrada=prompt("Eliga su segunda entrada (limite de 2 por compra): \n2D \n3D \n2D DBOX \n3D DBOX \n(sino escriba: salir)");
+let precioPrompt=prompt("Eliga que tipo de entrada al cine quiere y le dire el precio en total: \n2D \n3D \n2D DBOX \n3D DBOX \n(sino escriba: salir)");
 
-let entrada2D = 1040;
-let entrada3D = 1160;
-let entrada2Ddbox = 1380;
-let entrada3Ddbox = 1440;
+class entradas {
+    constructor(entrada, precio) {
+        this.entrada = entrada;
+        this.precio = precio;
+    }
+}
 
-while(entrada!="salir"){
-    switch(entrada){
+let entrada1 = new entradas("2D", 1080);
+let entrada2 = new entradas("3D", 1160);
+let entrada3 = new entradas("2D DBOX", 1380);
+let entrada4 = new entradas("3D DBOX", 1440);
+let compra = [];
+let entrada;
+let precio;
+
+while(precioPrompt!="salir"){
+    switch(precioPrompt){
         case "2D":
-            console.log("La entrada 2D esta $1040");
-            productoUno = entrada2D;
+            console.log(entrada1);
+            entrada = entrada1.entrada;
+            precio = entrada1.precio;
             break;
         case "3D":
-            console.log("La entrada 3D esta $1160");
-            productoUno = entrada3D;
+            console.log(entrada2);
+            entrada = entrada2.entrada;
+            precio = entrada2.precio;
             break;
         case "2D DBOX":
-            console.log("La entrada 2D en asiento DBOX esta $1380");
-            productoUno = entrada2Ddbox;
+            console.log(entrada3);
+            entrada = entrada3.entrada;
+            precio = entrada3.precio;
             break;
         case "3D DBOX":
-            console.log("La entrada 3D en asiento DBOX esta $1440");
-            productoUno = entrada3Ddbox;
+            console.log(entrada4);
+            entrada = entrada4.entrada;
+            precio = entrada4.precio;
             break;
         default:
-            console.log("Lo sentimos, intente de nuevo mas tarde.");
+            alert("Entrada no valida, intente de nuevo.")
+            precioPrompt=prompt("Eliga que tipo de entrada al cine quiere y le dire el precio en total: \n2D \n3D \n2D DBOX \n3D DBOX \n(sino escriba: salir)");
             break;
     }
-    break;
-}
+    let cantidad = parseInt(prompt("Cuantas unidades?"))
+    compra.push ({entrada, cantidad, precio})
 
-function suma (productoUno, productoDos){
-    let compra = productoUno + productoDos
-    return compra
-}
-
-    while(segundaEntrada!="salir"){
-        switch(segundaEntrada){
-        case "2D":
-            console.log("La entrada 2D esta $1040");
-            productoDos = entrada2D;
-            console.log("El total es " + compra);
-            break;
-        case "3D":
-            console.log("La entrada 3D esta $1160");
-            productoDos = entrada3D;
-            console.log("El total es " + compra);
-            break;
-        case "2D DBOX":
-            console.log("La entrada 2D en asiento DBOX esta $1380");
-            productoDos = entrada2Ddbox;
-            console.log("El total es " + compra);
-            break;
-        case "3D DBOX":
-            console.log("La entrada 3D en asiento DBOX esta $1440");
-            productoDos = entrada3Ddbox;
-            console.log("El total es " + compra);
-            break;
-        default:
-            console.log("Lo sentimos, intente de nuevo mas tarde.");
-            break;
+    precioPrompt = prompt("terminar compra?")
+    if (precioPrompt == "si") {
+        alert("gracias por comprar!")
+        compra.forEach((compraFinal) => {
+            console.log("compra:" + compraFinal.entrada + ", unidades:" + compraFinal.cantidad + ", total:" + compraFinal.cantidad * compraFinal.precio)
+        } )
+        break;
     }
-    break;
+    else if (precioPrompt == "no") {
+        precioPrompt = prompt("que mas desea comprar?")
+    }
 }
 
 
-// 3D 1160 - 2D DBOX 1380 - 3D DBOX 1440
+//2D 1080 - 3D 1160 - 2D DBOX 1380 - 3D DBOX 1440
