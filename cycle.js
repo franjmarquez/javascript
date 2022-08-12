@@ -1,4 +1,7 @@
-let precioPrompt=prompt("Eliga que tipo de entrada al cine quiere y le dire el precio en total: \n2D \n3D \n2D DBOX \n3D DBOX \n(sino escriba: salir)");
+let input1 = document.getElementById ("entrada2D");
+let input2 = document.getElementById ("entrada3D");
+let input3 = document.getElementById ("entrada2DDBOX");
+let input4 = document.getElementById ("entrada3DDBOX");
 
 class entradas {
     constructor(entrada, precio) {
