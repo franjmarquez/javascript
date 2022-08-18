@@ -55,11 +55,13 @@ const ticketCart = [{ id: 1,  product: "general", price:  1080},
 
 const saveLocal = (name, value) => {localStorage.setItem(name, value)};
 
-let buy = document.getElementById("ticket-button")
-buy.onclick = () => {console.log("jajaj")}
+window.onload = function() {
+    let button1 = document.getElementById("btng");
+    button1.onclick = addToCart;
+}
 
-for (const ticketsCart of ticketCart) {
-    saveLocal (ticketCart.id, JSON.stringify(ticketCart));
+function addToCart() {
+    let button1 = document.getElementById("btng");
 }
 
 let cart=document.getElementsByClassName("cart");
