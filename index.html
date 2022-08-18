@@ -4,40 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciclo entradas cine</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./assets/img/favicon.png">
+    <title>Simulador cine</title>
 </head>
-<body>
-    <p>
-        <h1>entrada 2D</h1>
-        <img src="./img/2D-TICKET.png" width="223" height="223" alt="2D TICKET">
-        <h3>precio: $1080</h3>
-        <h3>cantidad:</h3>
-        <input id = "entrada2D" type="text">
+<body class="content">
 
-        <br> <br> <br>
+    <header>
+        <h1 id="h1-header"></h1>
+    </header>
+
+    <div class="general">
+        <h2>GENERAL</h2>
+        <div class="ticket">
+            <h2 id="general-ticket"></h2>
+            <img class="ticket-image" src="./assets/img/ticket.png" alt="2D TICKET">
+            <span>Entrada general 2D.</span>
+        </div>
+        <div class="ticket-price">
+            <h2 id="general-ticket-price-general"></h2>
+        </div>
+    </div>
+
+    <div class="special">
+        <h2>ESPECIALES</h2>
+        <div class="ticket">
+            <h2 id="special-ticket-3D"></h2>
+            <img class="ticket-image" src="./assets/img/ticket-3d.png" width="60px" height="60px" alt="3D TICKET">
+            <span>Entrada especial 3D.</span>
+        </div>
+        <div class="ticket-price">
+            <h2 id="special-ticket-price-3D"></h2>
+        </div>
         
-        <h1>entrada 3D</h1>
-        <img src="./img/3D-TICKET.png" width="223" height="223" alt="3D TICKET">
-        <h3>precio: $1160</h3>
-        <h3>cantidad:</h3>
-        <input id = "entrada3D" type="text">
+        <div class="apart"></div>
         
-        <br> <br> <br>
+        <div class="ticket">
+            <h2 id="special-ticket-DBOX"></h2>
+            <img class="ticket-image" src="./assets/img/ticket-dbox.png" width="60px" height="60px" alt="2D DBOX TICKET">
+            <span>Entrada especial DBOX.</span>
+        </div>
+        <div class="ticket-price">
+            <h2 id="special-ticket-price-DBOX"></h2>
+        </div>
         
-        <h1>entrada 2D + DBOX</h1>
-        <h3>precio: $1380</h3>
-        <img src="./img/2D-DBOX.png" width="223" height="223" alt="2D DBOX">
-        <h3>cantidad:</h3>
-        <input id = "entrada2DDBOX" type="text">
+        <div class="apart"></div>
         
-        <br> <br> <br>
-        
-        <h1>entrada 3D + DBOX</h1>
-        <h3>precio: $1440</h3>
-        <img src="./img/3D-DBOX.png" width="223" height="223" alt="3D DBOX">
-        <h3>cantidad:</h3>
-        <input id = "entrada3DDBOX" type="text">
-    </p>
-    <script src="cycle.js"></script>
+        <div class="ticket">
+            <h2 id="special-ticket-star"></h2>
+            <img class="ticket-image" src="./assets/img/ticket-star.png" width="60px" height="60px" alt="3D DBOX TICKET">
+            <span>Entrada especial 4D.</span>
+        </div>
+        <div class="ticket-price">
+            <h2 id="special-ticket-price-star"></h2>
+        </div>
+    </div>
+
+    <div class="cart">
+        <p></p>
+    </div>
+
+<script src="script.js"></script>
 </body>
 </html>
