@@ -55,7 +55,12 @@ const ticketCart = [{ id: 1,  product: "general", price:  1080},
 
 const saveLocal = (name, value) => {localStorage.setItem(name, value)};
 
+let buy = document.getElementById("ticket-button")
+buy.onclick = () => {console.log("jajaj")}
+
 for (const ticketsCart of ticketCart) {
     saveLocal (ticketCart.id, JSON.stringify(ticketCart));
 }
+
+let cart=document.getElementsByClassName("cart");
 //2D 1080 - 3D 1160 - 2D DBOX 1380 - 3D DBOX 1440
